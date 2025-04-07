@@ -1,3 +1,4 @@
+
 using System;
 
 namespace calculator
@@ -49,41 +50,23 @@ namespace calculator
     // Calculator class to perform operations
     public class Calculator
     {
-        // ---------- TODO ----------
-        
-        // --------------------
+        public double Calculate(double num1, string op, double num2) {
+            if(op=="+") {
+                return num1+num2;
+            }
+            else if(op=="-") {
+                return num1-num2;
+            }
+            else if(op=="*") {
+                return num1*num2;
+            }
+            else if(op=="/") {
+                if(num2!=0) return num1/num2;
+                else throw new DivideByZeroException("Division by zero is not allowed");
+            }
+            else {
+                throw new InvalidOperationException("Invalid operator");
+            }
+        }
     }
 }
-
-/* example output
-
-Enter an expression (ex. 2 + 3):
->> 4 * 3
-Result: 12
-
-*/
-
-
-/* example output (CHALLANGE)
-
-Enter an expression (ex. 2 + 3):
->> 4 ** 3
-Result: 64
-
-Enter an expression (ex. 2 + 3):
->> 5 ** -2
-Result: 0.04
-
-Enter an expression (ex. 2 + 3):
->> 12 G 15
-Result: 3
-
-Enter an expression (ex. 2 + 3):
->> 12 L 15
-Result: 60
-
-Enter an expression (ex. 2 + 3):
->> 12 % 5
-Result: 2
-
-*/
